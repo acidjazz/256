@@ -1,0 +1,37 @@
+header
+  background-color: c.purple2
+  padding 10px 20px
+  height 110px
+  > .inner
+    > .logo
+      float right
+      border-radius 50%
+      width 100px
+      height 100px
+      background-color yellow
+      background-color: c.teal2
+      overflow hidden
+      animation logoCircleIn 1s infinite alternate both
+      > .copy
+        font: f.h2
+        color: c.purple2
+        line-height 100px
+        text-align right
+        animation logoCopyIn 1s infinite 1s alternate both
+      
+
+@keyframes logoCircleIn
+  from
+    width 10px
+    height 10px
+
+  to
+    width 100px
+    height 100px
+
+
+@keyframes logoCopyIn
+  from
+    transform translate(-2100px, 0)
+  from
+    transform translate(0, 0)
