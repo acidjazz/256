@@ -23,7 +23,7 @@ objectus('dat/', function(error, result) {
   data = result
 });
 
-gulp.task('slurp', function() {
+gulp.task('objectus', function() {
   objectus('dat/', function(error, result) {
     if (error) {
       notify(error);
@@ -84,9 +84,6 @@ gulp.task('jade', function() {
 
 });
 
-
-
-
 gulp.task('sync', function() {
   sync.init({
     notify: false,
@@ -96,7 +93,7 @@ gulp.task('sync', function() {
       }
     });
 
-  gulp.watch('dat/**/*', ['slurp', 'coffee','stylus','jade']);
+  gulp.watch('dat/**/*', ['objectus', 'coffee','stylus','jade']);
   gulp.watch('cof/**/*.coffee', ['coffee']);
   gulp.watch('sty/**/*.styl', ['stylus']);
   gulp.watch('tpl/**/*.jade', ['jade']);
@@ -104,12 +101,12 @@ gulp.task('sync', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch('dat/**/*', ['slurp', 'coffee','stylus','jade']);
+  gulp.watch('dat/**/*', ['objectus', 'coffee','stylus','jade']);
   gulp.watch('cof/**/*.coffee', ['coffee']);
   gulp.watch('sty/**/*.styl', ['stylus']);
   gulp.watch('tpl/**/*.jade', ['jade']);
 });
 
-gulp.task('default', ['slurp', 'coffee', 'stylus', 'jade', 'vendors']);
+gulp.task('default', ['objectus', 'coffee', 'stylus', 'jade', 'vendors']);
 
 
