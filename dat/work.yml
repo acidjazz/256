@@ -1,0 +1,17 @@
+---
+ astro:
+   color: '#FF002B'
+   name: Astro Studios
+   url: http://www.astrostudios.com/
+ br:
+   color: '#FF002B'
+   name: Bystander Revolution
+   url: http://www.bystanderrevolution.org/
+ daffodil:
+   color: '#ffffff'
+   name: Daffodil Digital
+   url: http://www.daffodildigital.com/
+ fjord:
+   color: '#ffffff'
+   name: Ford Life
+   url: http://www.fjordlife.ca/

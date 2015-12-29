@@ -1,37 +1,61 @@
 header
   background-color: c.purple2
-  padding 10px 20px
-  height 110px
+  padding 20px 40px
+  height 100px
   > .inner
     > .logo
       float right
-      border-radius 50%
       width 100px
       height 100px
-      background-color yellow
-      background-color: c.teal2
-      overflow hidden
-      animation logoCircleIn 1s infinite alternate both
-      > .copy
-        font: f.h2
-        color: c.purple2
-        line-height 100px
-        text-align right
-        animation logoCopyIn 1s infinite 1s alternate both
-      
+      > .inner
+        width 100px
+        height 100px
+        border-radius 50%
+        background-color: c.teal2
+        animation logoCircleIn 0.5s ease-in 1s alternate both
+        position relative
+        cursor pointer
+        overflow hidden
+        &:hover
+          background-color: c.purple2
+          > .copy
+            color: c.teal2
+        > .copy
+          font: f.h1
+          color: c.purple2
+          position absolute
+          overflow hidden
+          top 20px
+          right -2px
+          > .letter
+            float left
+            animation logoTextIn 0.2s ease-in 1.5s alternate both
+            &:nth-child(2)
+              animation-delay 1.525s
+            &:nth-child(3)
+              animation-delay 1.55s
+    > .info
+      margin 10px 20px 0 0
+      float right
+      text-align right
+      color: c.teal2
+      > .text
+        padding 5px 0
 
 @keyframes logoCircleIn
   from
-    width 10px
-    height 10px
-
+    margin 50px
+    width 0px
+    height 0px
   to
+    margin 0
     width 100px
     height 100px
 
-
-@keyframes logoCopyIn
+@keyframes logoTextIn
   from
-    transform translate(-2100px, 0)
-  from
+    opacity 0
+    transform translate(20px, 0)
+  to
+    opacity 1
     transform translate(0, 0)

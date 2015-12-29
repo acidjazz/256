@@ -1,7 +1,11 @@
 extends inc/layout
 
 block content
-  .test test
+  .section
+    .title work
+    .work
+      each job, name in data.work
+        .job(class='job_' + name)
 
   script(type='text/javascript').
     Loader.load('/jst/index.js', 'Index');
