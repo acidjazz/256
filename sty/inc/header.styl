@@ -1,39 +1,53 @@
+size = 500
 header
   background-color: c.purple2
   padding 20px 40px
-  height 100px
+  //height unit(size, px)
+  height 100vh
+  position relative
   > .inner
     > .logo
-      float right
-      width 100px
-      height 100px
+      position absolute
+      top 50%
+      left 50%
+      margin-top - unit(size/2, px)
+      margin-left - unit(size/2, px)
+      width unit(size, px)
+      height unit(size, px)
+      onoff()
       > .inner
-        width 100px
-        height 100px
+        width unit(size, px)
+        height unit(size, px)
         border-radius 50%
         background-color: c.teal2
-        animation logoCircleIn 0.5s ease-in 1s alternate both
+        animation logoCircleIn 0.5s ease-in 0.5s alternate both
+        animation-timing-function: cubic-bezier(.87,-.41,.19,1.44)
         position relative
         cursor pointer
         overflow hidden
+        &.offing
+          animation logoCircleOut 0.5s ease-in 0s alternate both
+          animation-timing-function: cubic-bezier(.87,-.41,.19,1.44)
         &:hover
-          background-color: c.purple2
           > .copy
-            color: c.teal2
+            color: c.teal1
         > .copy
+          transition color 0.1s linear
           font: f.h1
           color: c.purple2
+          font-size: unit(size/2.5, px)
           position absolute
           overflow hidden
           top 20px
-          right -2px
+          top: unit(size/3.5, px)
+          right - unit(size/100, px)
           > .letter
             float left
-            animation logoTextIn 0.2s ease-in 1.5s alternate both
+            animation logoTextIn 0.2s ease-in 1.0s alternate both
             &:nth-child(2)
-              animation-delay 1.525s
+              animation-delay 1.025s
             &:nth-child(3)
-              animation-delay 1.55s
+              animation-delay 1.05s
     > .info
       margin 10px 20px 0 0
       float right
@@ -44,13 +58,25 @@ header
 
 @keyframes logoCircleIn
   from
-    margin 50px
+    margin unit(size/2, px)
     width 0px
     height 0px
   to
     margin 0
-    width 100px
-    height 100px
+    width unit(size, px)
+    height unit(size, px)
+
+@keyframes logoCircleOut
+  from
+    margin 0
+    width unit(size, px)
+    height unit(size, px)
+  to
+    margin unit(size/2, px)
+    width 0px
+    height 0px
+
+
 
 @keyframes logoTextIn
   from

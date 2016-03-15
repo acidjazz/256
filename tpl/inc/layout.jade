@@ -1,4 +1,4 @@
-// 
+//
   mmm/............................................................./mmm
   mmo................-:://::-.......-:::::::::::::-........-::///:-.omm
   md-.............:+yhddddddhy+-..../ddddddddddddd+....../shdddddddyodm
@@ -26,7 +26,7 @@
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   See the License for the specific language governing permissions and
   limitations under the License.
-
+| !{'\n\n'}
 doctype
 html(lang='en')
   head
@@ -95,16 +95,13 @@ html(lang='en')
     if meta
       meta(name='twitter:title',content=meta.title)
       meta(name='twitter:description',content=meta.description)
-      meta(name='twitter:image',content=data.meta.url + data.meta.image) 
+      meta(name='twitter:image',content=data.meta.url + data.meta.share)
     else
       meta(name='twitter:title',content=data.meta.title)
       meta(name='twitter:description',content=data.meta.description)
-      meta(name='twitter:image',content=data.meta.url + data.meta.image) 
-      meta(name='twitter:image:width','1200') 
-      meta(name='twitter:image:height','630') 
-
-
-
+      meta(name='twitter:image',content=data.meta.url + data.meta.share)
+      meta(name='twitter:image:width','1200')
+      meta(name='twitter:image:height','630')
 
 
     link(rel="apple-touch-icon",sizes="57x57",href="/ico/apple-touch-icon-57x57.png")
