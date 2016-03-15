@@ -1,6 +1,5 @@
 
 var gulp = require('gulp');
-
 var sync = require('browser-sync').create();
 
 var notify = require('gulp-notify');
@@ -14,36 +13,49 @@ var jade = require('gulp-jade');
 
 var sourcemaps = require('gulp-sourcemaps');
 
+var path = require('path');
+var fs = require('fs');
+
 var objectus = require('objectus');
 
 objectus('dat/', function(error, result) {
   if (error) {
     notify(error);
   }
-  data = result
+  data = result;
 });
 
 gulp.task('objectus', function() {
   objectus('dat/', function(error, result) {
+
     if (error) {
       notify(error);
     }
-    data = result
+
+    data = result;
+
   });
+  return true;
 });
 
 gulp.task('vendors', function() {
 
-  gulp.src(['bower_components/jquery/dist/jquery.js'])
+  gulp.src([
+    'bower_components/jquery/dist/jquery.js',
+    'bower_components/jquery.scrollTo/jquery.scrollTo.min.js'
+  ])
   .pipe(sourcemaps.init())
   .pipe(uglify())
   .pipe(concat('vendor.min.js'))
   .pipe(sourcemaps.write())
-  .pipe(gulp.dest('pub/jst/lib'))
+  .pipe(gulp.dest('pub/jst/lib'));
 
 });
 
 gulp.task('coffee', function() {
+
+  fs.writeFileSync('pub/jst/data.js', "var data = " + JSON.stringify(data) + ";", 'utf8')
+
   gulp.src('cof/**/*.coffee')
     .pipe(sourcemaps.init())
     .pipe(coffee({bare: true})
@@ -54,7 +66,6 @@ gulp.task('coffee', function() {
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('pub/jst'))
     .pipe(sync.stream());
-
 });
 
 gulp.task('stylus', function() {
@@ -71,6 +82,7 @@ gulp.task('stylus', function() {
     .pipe(sync.stream());
 });
 
+
 gulp.task('jade', function() {
 
   gulp.src('tpl/**/index.jade')
@@ -78,11 +90,16 @@ gulp.task('jade', function() {
       .on('error', notify.onError(function(error) {
         return {title: "Jade error: " + error.name, message: error.message, sound: 'Pop' };
       }))
+      .on('error', function(error) {
+        console.log(error);
+      })
     )
     .pipe(gulp.dest('pub'))
     .pipe(sync.stream());
 
 });
+
+var imgwatch;
 
 gulp.task('sync', function() {
   sync.init({
@@ -90,23 +107,31 @@ gulp.task('sync', function() {
     open: false,
     server: {
       baseDir: 'pub/',
-      }
-    });
+    },
+    ghostMode: {
+      clicks: true,
+      forms: true,
+      scroll: false
+    },
+    scrollProportionally: false,
+    scrollRestoreTechnique: 'cookie'
+  });
 
-  gulp.watch('dat/**/*', ['objectus', 'coffee','stylus','jade']);
-  gulp.watch('cof/**/*.coffee', ['coffee']);
+  gulp.watch('dat/**/*', ['objectus','stylus','jade']);
+  gulp.watch('cof/**/*.coffee', ['objectus', 'coffee']);
   gulp.watch('sty/**/*.styl', ['stylus']);
   gulp.watch('tpl/**/*.jade', ['jade']);
+  gulp.watch('pub/svg/**/*.svg', ['jade']);
+  gulp.watch('pub/img/**/*', ['jade']);
 
 });
+
 
 gulp.task('watch', function() {
-  gulp.watch('dat/**/*', ['objectus', 'coffee','stylus','jade']);
+  gulp.watch('dat/**/*', ['objectus','stylus','jade']);
   gulp.watch('cof/**/*.coffee', ['coffee']);
   gulp.watch('sty/**/*.styl', ['stylus']);
   gulp.watch('tpl/**/*.jade', ['jade']);
 });
 
-gulp.task('default', ['objectus', 'coffee', 'stylus', 'jade', 'vendors']);
-
-
+gulp.task('default', ['objectus','coffee', 'stylus', 'jade', 'vendors']);

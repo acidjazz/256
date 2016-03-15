@@ -1,3 +1,13 @@
+ onoff()
+  &.on
+    display block
+  &.off
+    display none
+
+desktop()
+  max-width 1200px
+  margin auto
+
 clearfix()
   &:before
   &:after
@@ -6,6 +16,7 @@ clearfix()
   &:after
     clear: both
   zoom: 1 if support-for-ie
+
 
 fontfaces(dir, fonts, exts)
 
