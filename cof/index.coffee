@@ -21,4 +21,4 @@ Index =
 
     setTimeout ->
       _.on '.logo'
-    , 700
+    , 610
