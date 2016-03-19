@@ -4,7 +4,12 @@ header
       .inner
         .circle
         .copy 
-          .letter 2
-          .letter 5
-          .letter 6
+          if error
+            .letter 4
+            .letter 0
+            .letter 4
+          else
+            .letter 2
+            .letter 5
+            .letter 6
     .clear

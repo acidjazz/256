@@ -1,0 +1,11 @@
+extends ../inc/layout
+block meta
+  - var error = true;
+block content
+  .soon page not found
+  //.section
+    .title work
+    .work
+      each job, name in data.work
+        .job(class='job_' + name)
+
