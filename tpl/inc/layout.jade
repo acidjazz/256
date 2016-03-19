@@ -71,7 +71,19 @@ html(lang='en')
         "@type": "Organization",
         "url": "#{data.meta.url}",
         "logo": "#{data.meta.url}#{data.meta.logo}",
-        "telephone": "+1#{data.meta.phone}"
+        "telephone": "+1#{data.meta.phone}",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "19 tehama st",
+          "addressLocality": "San Francisco",
+          "addressRegion": "CA",
+          "postalCode": "94103",
+          "addressCountry": "US"
+        },
+        "sameAs": {
+          "https://www.facebook.com/256llc/",
+          "https://www.twitter.com/256llc/",
+          "https://www.instagram.com/256llc/"
         }
       }
 
