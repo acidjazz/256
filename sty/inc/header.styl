@@ -1,18 +1,28 @@
 size = 350
 header
-  background-color: c.purple2
+  border-bottom 10px solid gc(purple1)
+  background-color gc(purple2)
   padding 20px 40px
   //height unit(size, px)
   height 100vh
   position relative
   z-index 5
+  transition height 1s linear
+  transition-timing-function: cubic-bezier(.87,-.41,.19,1.44)
+  &.settled
+    height 100px
+    overflow hidden
+    > .inner > .logo
+      left auto
+      right 200px
+      transition right 0.4s ease-in-out 0.4s
   > .inner
     > .logo
       position absolute
       top 50%
-      left 50%
+      right 50%
       margin-top - unit(size/2, px)
-      margin-left - unit(size/2, px)
+      margin-right - unit(size/2, px)
       width unit(size, px)
       height unit(size, px)
       onoff()
@@ -20,7 +30,7 @@ header
         width unit(size, px)
         height unit(size, px)
         border-radius 50%
-        background-color: c.teal2
+        background-color gc(teal2)
         animation logoCircleIn 0.5s ease-in 0.5s alternate both
         animation-timing-function: cubic-bezier(.87,-.41,.19,1.44)
         position relative
@@ -31,8 +41,8 @@ header
           animation-timing-function: cubic-bezier(.87,-.41,.19,1.44)
         > .copy
           transition color 0.1s linear
-          font: f.h1
-          color: c.purple2
+          gf(h1)
+          color gc(purple2)
           font-size: unit(size/2.5, px)
           position absolute
           overflow hidden
@@ -50,7 +60,7 @@ header
       margin 10px 20px 0 0
       float right
       text-align right
-      color: c.teal2
+      color gc(teal2)
       > .text
         padding 5px 0
 

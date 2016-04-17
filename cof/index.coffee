@@ -5,10 +5,12 @@ Index =
     console.log 'Index.i()'
 
     Index.handlers()
+    setTimeout ->
+      $('header').addClass 'settled'
+    , 2000
 
   handlers: ->
     $('.logo').click Index.cycle
-
 
   cycle: ->
 

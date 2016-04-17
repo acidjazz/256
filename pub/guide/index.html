@@ -131,10 +131,11 @@ limitations under the License.
       <div class="sections">
         <div class="section colors">
           <div class="title">Colors</div>
-          <div class="color color_black1">black1 (#000000)</div>
-          <div class="color color_black2">black2 (#666666)</div>
+          <div class="color color_black1">black1 (#2B2D32)</div>
+          <div class="color color_black2">black2 (#414347)</div>
           <div class="color color_white1">white1 (#ffffff)</div>
           <div class="color color_white2">white2 (#eeeeee)</div>
+          <div class="color color_white3">white3 (#ababad)</div>
           <div class="color color_purple1">purple1 (#332631)</div>
           <div class="color color_purple2">purple2 (#4D394B)</div>
           <div class="color color_purple3">purple3 (#AB9BA9)</div>
@@ -143,12 +144,16 @@ limitations under the License.
         </div>
         <div class="section fonts">
           <div class="title">Fonts</div>
-          <div class="font font_copy1">copy1: 16px Roboto</div>
-          <div class="font font_copy2">copy2: 32px Roboto</div>
-          <div class="font font_h1">h1: 48px proxima extrabold</div>
-          <div class="font font_h2">h2: 36px proxima extrabold</div>
+          <div class="font font_copy1">copy1 Roboto 16px</div>
+          <div class="font font_copy2">copy2 Roboto 32px</div>
+          <div class="font font_h1">h1 proxima extrabold 48px</div>
+          <div class="font font_h2">h2 proxima extrabold 36px</div>
         </div>
       </div>
     </div>
+    <script type="text/javascript">
+      Loader.load('/jst/index.js', 'Index');
+      setTimeout(function() { $('header').addClass('settled'); }, 1000);
+    </script>
   </body>
 </html>

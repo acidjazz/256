@@ -1,13 +1,10 @@
 
-// colors
+gf(k)
+  for key, value in data.font[k]
+    {key} unquote(value)
 
-c = {}
-for key, value in data.colors
-  c[key] = convert(value)
-
-f = {}
-for key, value in data.fonts
-  f[key] = unquote(value)
+gc(k)
+  return convert(data.color[k])
 
 .guide
   padding 20px 0 0 0 
@@ -18,27 +15,28 @@ for key, value in data.fonts
       width 33%
       float left
       > .title
-        font: f.h3
+        gf(h1)
         padding 0 0 0 10px
+        color gc(white2)
 
       > .color
         padding 10px 20px
         margin 5px
-        color: c.white1
-        for name, color in data.colors
+        color gc(white1)
+        for name, color in data.color
           &.color_{name}
             background-color: convert(color)
             if dark(convert(color))
-              border: 1px solid c.white1
-              color: c.white1
+              border: 1px solid white
+              color: white
             else
-              border: 1px solid c.black1
-              color: c.black1
+              border: 1px solid black
+              color: black
       > .font
         padding 10px 20px
-        background-color: c.white1
         overflow-x scroll
-        for name, font in data.fonts
+        color gc(white1)
+        for name, font in data.font
           &.font_{name}
-            font: unquote(font)
+            gf(name)
  

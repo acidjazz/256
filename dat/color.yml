@@ -1,9 +1,10 @@
 ---
 
-black1: "#000000"
-black2: "#666666"
+black1: "#2B2D32"
+black2: "#414347"
 white1: "#ffffff"
 white2: "#eeeeee"
+white3: "#ababad"
 purple1: "#332631"
 purple2: "#4D394B"
 purple3: "#AB9BA9"
