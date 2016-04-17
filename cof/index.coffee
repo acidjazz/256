@@ -2,9 +2,8 @@ Index =
 
   i: ->
 
-    console.log 'Index.i()'
-
     Index.handlers()
+
     setTimeout ->
       $('header').addClass 'settled'
     , 2000
