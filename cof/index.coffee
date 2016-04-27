@@ -9,7 +9,7 @@ Index =
     , 2000
     setTimeout ->
       $('.menu > .option').removeClass 'loading'
-    , 5000
+    , 4000
 
   handlers: ->
     $('.logo').click Index.cycle

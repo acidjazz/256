@@ -1,6 +1,7 @@
-size = 350
+dsize = 350
+msize = 350
 header
-  border-bottom 10px solid gc(purple1)
+  border-bottom 10px solid gc(teal2)
   background-color gc(purple2)
   height 100vh
   position relative
@@ -18,23 +19,23 @@ header
     > .menu
       width 600px
       height 50px
-      margin 75px 0 0 0
+      margin 80px 0 0 0
       > .option
         float left
         position relative
-        width 200px
+        width 150px
         height 50px
         transform-style preserve-3d
         transition-timing-function: cubic-bezier(.87,-.41,.19,1.44)
-        cursor pointer
         transform-origin 100% 115%
+        user-select none
 
         &.on
           transform rotateX(-180deg)
-          transition transform 1s cubic-bezier(.87,-.41,.19,1.44) 0.3s
+          transition transform 1s cubic-bezier(.87,-.41,.19,1.44) 0s
         &.off
           transform rotateX(0deg)
-          transition transform 1s cubic-bezier(.87,-.41,.19,1.44) 0s
+          transition transform 1s cubic-bezier(.87,-.41,.19,1.44) 0.3s
 
         &.loading
           animation menuEnter 0.5s ease-in-out 3.0s alternate both
@@ -55,15 +56,24 @@ header
           color gc(teal2)
           backface-visibility hidden
           text-align center
+          transition color 0.1s linear, background-color 0.1s linear 0.05s
+          user-select none
+          &:hover
+            color gc(teal1)
+            background-color rgba(gc(teal2), 0.2)
         > .face.front
           transform rotateX(0deg) translate3d(0, 0, 25px)
+          cursor pointer
+          background-color gc(black1)
         > .face.bottom
           transform rotateX(-90deg) translate3d(0, 0, 25px)
           background-color gc(purple2)
         > .face.top
           transform rotateX(90deg) translate3d(0, 0, 25px)
+          background-color gc(black1)
         > .face.back
           transform rotateX(-180deg) translate3d(0, 0, 25px)
+          background-color gc(black1)
           color gc(purple2)
           background-color gc(teal2)
         &.loading.option > .face.back
@@ -73,14 +83,14 @@ header
       position absolute
       top 50%
       right 50%
-      margin-top - unit(size/2, px)
-      margin-right - unit(size/2, px)
-      width unit(size, px)
-      height unit(size, px)
+      margin-top - unit(dsize/2, px)
+      margin-right - unit(dsize/2, px)
+      width unit(dsize, px)
+      height unit(dsize, px)
       onoff()
       > .inner
-        width unit(size, px)
-        height unit(size, px)
+        width inherit
+        height inherit
         border-radius 50%
         background-color gc(teal2)
         animation logoCircleIn 0.5s ease-in 0.5s alternate both
@@ -95,12 +105,12 @@ header
           transition color 0.1s linear
           gf(h1)
           color gc(purple2)
-          font-size: unit(size/2.5, px)
+          font-size: unit(dsize/2.5, px)
           position absolute
           overflow hidden
           top 20px
-          top: unit(size/3.5, px)
-          right - unit(size/100, px)
+          top: unit(dsize/3.5, px)
+          right - unit(dsize/100, px)
           > .letter
             float left
             animation logoTextIn 0.2s ease-in 1.0s alternate both
@@ -118,21 +128,21 @@ header
 
 @keyframes logoCircleIn
   from
-    margin unit(size/2, px)
+    margin unit(dsize/2, px)
     width 0px
     height 0px
   to
     margin 0
-    width unit(size, px)
-    height unit(size, px)
+    width unit(dsize, px)
+    height unit(dsize, px)
 
 @keyframes logoCircleOut
   from
     margin 0
-    width unit(size, px)
-    height unit(size, px)
+    width unit(dsize, px)
+    height unit(dsize, px)
   to
-    margin unit(size/2, px)
+    margin unit(dsize/2, px)
     width 0px
     height 0px
 
@@ -151,3 +161,10 @@ header
   to
     opacity 1
     transform translate(0, 0)
+
+
+@media all and (min-width: 1px) and (max-width: 1000px)
+  header.settled
+    > .inner
+      > .logo
+        background-color orange
