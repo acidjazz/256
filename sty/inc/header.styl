@@ -26,7 +26,6 @@ header
         width 150px
         height 50px
         transform-style preserve-3d
-        transition-timing-function: cubic-bezier(.87,-.41,.19,1.44)
         transform-origin 100% 115%
         user-select none
 
@@ -36,6 +35,9 @@ header
         &.off
           transform rotateX(0deg)
           transition transform 1s cubic-bezier(.87,-.41,.19,1.44) 0.3s
+          &:hover, &:active
+            transition transform 0.2s linear 0s
+            transform rotateX(10deg)
 
         &.loading
           animation menuEnter 0.5s ease-in-out 3.0s alternate both
