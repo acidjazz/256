@@ -7,9 +7,17 @@ Index =
     setTimeout ->
       $('header').addClass 'settled'
     , 2000
+    setTimeout ->
+      $('.menu > .option').removeClass 'loading'
+    , 5000
 
   handlers: ->
     $('.logo').click Index.cycle
+    $('.menu > .option').click Index.option
+
+  option: ->
+    _.off '.menu > .option'
+    _.on this
 
   cycle: ->
 
