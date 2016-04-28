@@ -79,6 +79,7 @@ header
           background-color gc(purple2) !important
 
     > .logo
+      user-select none
       position absolute
       top 50%
       right 50%
@@ -105,7 +106,7 @@ header
           gf(h1)
           color gc(purple2)
           font-size: unit(dsize/2.5, px)
-          transition font-size 0.45s ease-in-out 0.4s
+          transition font-size 0.4s ease-in-out 0.4s, top 0.4s ease-in-out 0.4s
           position absolute
           overflow hidden
           top 20px
@@ -138,11 +139,9 @@ header
 
 @keyframes logoCircleOut
   from
-    margin 0
     width inherit
     height inherit
   to
-    margin inherit
     width 0px
     height 0px
 
@@ -164,11 +163,15 @@ header
 
 @media all and (min-width: 1px) and (max-width: 1000px)
   header.settled
-    height 100px
+    height 150px
     > .inner
+      > .menu
+        margin -34px 0 0 -40px
+        > .option
+          float none
       > .logo
-        right 180px
-        top 130px
+        right 185px
+        top 160px
         width unit(msize, px)
         height unit(msize, px)
         > .inner
