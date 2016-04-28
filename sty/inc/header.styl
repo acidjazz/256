@@ -1,5 +1,5 @@
 dsize = 350
-msize = 350
+msize = 200
 header
   border-bottom 10px solid gc(teal2)
   background-color gc(purple2)
@@ -14,7 +14,7 @@ header
     > .inner > .logo
       left auto
       right 200px
-      transition right 0.4s ease-in-out 0.4s
+      transition all 0.4s ease-in-out 0.4s
   > .inner
     > .menu
       width 600px
@@ -31,10 +31,10 @@ header
 
         &.on
           transform rotateX(-180deg)
-          transition transform 1s cubic-bezier(.87,-.41,.19,1.44) 0s
+          transition transform 0.5s cubic-bezier(.53,-0.25,.58,1.23) 0s
         &.off
           transform rotateX(0deg)
-          transition transform 1s cubic-bezier(.87,-.41,.19,1.44) 0.3s
+          transition transform 0.5s cubic-bezier(.53,-0.25,.58,1.23) 0.3s
           &:hover, &:active
             transition transform 0.2s linear 0s
             transform rotateX(10deg)
@@ -60,8 +60,6 @@ header
           text-align center
           transition color 0.1s linear, background-color 0.1s linear 0.05s
           user-select none
-          &:hover
-            color gc(teal1)
         > .face.front
           transform rotateX(0deg) translate3d(0, 0, 25px)
           cursor pointer
@@ -107,10 +105,11 @@ header
           gf(h1)
           color gc(purple2)
           font-size: unit(dsize/2.5, px)
+          transition font-size 0.4s ease-in-out 0.4s
           position absolute
           overflow hidden
           top 20px
-          top: unit(dsize/3.5, px)
+          top unit(dsize/3.5, px)
           right - unit(dsize/100, px)
           > .letter
             float left
@@ -134,16 +133,16 @@ header
     height 0px
   to
     margin 0
-    width unit(dsize, px)
-    height unit(dsize, px)
+    width inherit
+    height inherit
 
 @keyframes logoCircleOut
   from
     margin 0
-    width unit(dsize, px)
-    height unit(dsize, px)
+    width inherit
+    height inherit
   to
-    margin unit(dsize/2, px)
+    margin inherit
     width 0px
     height 0px
 
@@ -153,7 +152,6 @@ header
     transform rotateX(90deg)
   to
     transform rotateX(0deg)
-
 
 @keyframes logoTextIn
   from
@@ -166,6 +164,15 @@ header
 
 @media all and (min-width: 1px) and (max-width: 1000px)
   header.settled
+    height 100px
     > .inner
       > .logo
-        background-color orange
+        right 180px
+        top 130px
+        width unit(msize, px)
+        height unit(msize, px)
+        > .inner
+          > .copy
+            font-size unit(msize/2.5, px)
+            top unit(msize/3.5, px)
+            right - unit(msize/100, px)
