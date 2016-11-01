@@ -44,11 +44,12 @@ gulp.task 'vendor', ->
 
   gulp.src([
     'node_modules/jquery/dist/jquery.js',
+    'public/javascript/lib/parallax.js',
   ])
 
   .pipe(gulpif(env != 'dev',uglify()))
   .pipe(concat('vendor.js'))
-  .pipe gulp.dest('public/js/')
+  .pipe gulp.dest('public/javascript/')
 
   # vendor CSS includes
   # gulp.src([])
@@ -69,7 +70,7 @@ gulp.task 'coffee', ->
     .pipe(gulpif(env != 'dev',uglify()))
     .pipe(concat('bundle.js'))
     .pipe(gulpif(env == 'dev',sourcemaps.write()))
-    .pipe(gulp.dest('./public/js'))
+    .pipe(gulp.dest('./public/javascript'))
     .pipe(sync.stream())
 
 gulp.task 'stylus', ->
