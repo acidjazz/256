@@ -1,4 +1,8 @@
 ---
+ definery:
+   color: "#3F4C55"
+   name: Astro Studios
+   url: http://www.astrostudios.com/
  astro:
    color: '#FF002B'
    name: Astro Studios
@@ -11,7 +15,3 @@
    color: '#ffffff'
    name: Daffodil Digital
    url: http://www.daffodildigital.com/
- fjord:
-   color: '#ffffff'
-   name: Ford Life
-   url: http://www.fjordlife.ca/

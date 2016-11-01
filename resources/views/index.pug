@@ -1,12 +1,15 @@
 extends extends/layout
 
 block content
-  .soon coming soon
   .section.section_work.off
     .work
       each job, name in config.work
         .job(class='job_' + name)
-          .inner.layer(data-depth=0.2)
+          .inner.layer(data-depth=0.1)
+            .background.layer(data-depth=0.4)
+            .logo.layer(data-depth=0.6)
+  .section.section_code.off
+    .uc coming soon
 
   script.
     Index.i()

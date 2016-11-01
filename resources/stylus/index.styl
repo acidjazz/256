@@ -1,39 +1,51 @@
-.soon
-  position absolute
-  z-index 10
-  bottom 10vh
-  right 0
-  left 0
-  text-align center
-  color gc(teal2)
-  gf(copy2)
-
 .section
   onoff()
   height 100vh
 
 .work
+  padding 1vw 
   > .job
     float left
-    width 25vw
-    height 25vw
+    width 22.5vw
+    height 22.5vw
     position relative
+    margin 1vw
     overflow hidden
+    animation cellInY 0.2s linear 0.3s both
+    for i in 1..8
+      &:nth-child({i})
+        animation-delay unit((0.1*i) + 0.3, 's')
     for key, project in config.work
       &.job_{key}
-        background-color: unquote(project.color)
         > .inner
-          background-image url(/images/work/key/logo.jpg)
-          background-size contain
-          background-position 50% 50%
-          background-repeat no-repeat
+          background-color: unquote(project.color)
+          position relative
           width inherit
           height inherit
+          overflow hidden
+          > .background, > .logo
+            position absolute
+            fullsize()
+          > .background
+            background-image url(/images/work/key/background.jpg)
+            background-size cover
+            background-position 50% 50%
+            background-repeat no-repeat
+            width 200%
+            height 200%
+            margin -50% 0 0 -50%
+          > .logo
+            background-image url(/images/work/key/logo.png)
+            background-size contain
+            background-position 50% 50%
+            background-repeat no-repeat
+            width inherit
+            height inherit
 
 @media all and (min-width: 1px) and (max-width: 1000px)
   .work
+    text-align center
     > .job
-      float left
-      width 50vw
-      height 50vw
-   
+      width 45vw
+      height 45vw
+      margin 2vw 
