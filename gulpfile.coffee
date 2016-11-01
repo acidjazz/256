@@ -33,7 +33,6 @@ objectify = (complete) ->
     fs.writeFileSync(dirs.coffee + '/config.coffee', "config = " + JSON.stringify(config) + ";", 'utf8')
     complete?()
  
-
 objectify()
 
 gulp.task 'objectus', objectify

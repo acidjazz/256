@@ -1,0 +1,35 @@
+.soon
+  position absolute
+  z-index 10
+  bottom 10vh
+  right 0
+  left 0
+  text-align center
+  color gc(teal2)
+  gf(copy2)
+
+.section
+  > .title
+    gf(h2)
+    padding 10px
+
+.work
+  > .job
+    float left
+    width 25vw
+    height 25vw
+    background-size contain
+    background-repeat no-repeat
+    background-position center center
+    for key, project in config.work
+      &.job_{key}
+        background-color: unquote(project.color)
+        background-image url(/img/work/key/logo.jpg)
+
+@media all and (min-width: 1px) and (max-width: 1000px)
+  .work
+    > .job
+      float left
+      width 50vw
+      height 50vw
+   
