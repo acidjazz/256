@@ -2,22 +2,45 @@ Index =
 
   i: ->
 
-    Index.handlers()
+    _.on 'header > .inner > .logo'
 
-    setTimeout ->
-      $('header').addClass 'settled'
-    , 2000
-    setTimeout ->
+    @loadImages ->
+
       $('.menu > .option').removeClass 'loading'
-    , 4000
+      $('.menu > .option').addClass 'loaded'
 
-    setTimeout ->
-      _.on '.menu > .option.option_1'
-      _.on '.section.section_work'
+      $('header').addClass 'settled'
 
-      new Parallax $('.section.section_work')[0]
+      setTimeout ->
+        $('.menu > .option').removeClass 'loading'
+        $('.menu > .option').removeClass 'loaded'
+      , 2000
 
-    , 4100
+      setTimeout ->
+        _.on '.menu > .option.option_1'
+        _.on '.section.section_work'
+
+        new Parallax $('.section.section_work')[0]
+
+        Index.handlers()
+
+      , 2100
+
+  loadImages: (complete) ->
+
+    dbar.i()
+
+    images = []
+
+    for dir of config.work
+      images.push "images/work/#{dir}/logo.png"
+      images.push "images/work/#{dir}/background.jpg"
+
+    Preload images, (progress) ->
+      dbar.perc progress
+    , (done) ->
+      dbar.d()
+      complete()
 
   handlers: ->
     $('header > .inner > .logo').click Index.cycle
@@ -41,3 +64,4 @@ Index =
     setTimeout ->
       _.on '.logo'
     , 610
+

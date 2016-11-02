@@ -45,14 +45,16 @@ gulp.task 'vendor', ->
   gulp.src([
     'node_modules/jquery/dist/jquery.js',
     'public/javascript/lib/parallax.js',
+    'node_modules/dbar/dist/dbar.js',
   ])
 
   .pipe(gulpif(env != 'dev',uglify()))
   .pipe(concat('vendor.js'))
   .pipe gulp.dest('public/javascript/')
 
-  # vendor CSS includes
-  # gulp.src([])
+  gulp.src([
+    'node_modules/dbar/dist/dbar.css',
+  ])
 
   .pipe(gulpif(env != 'dev',clean()))
   .pipe(concat('vendor.css'))
