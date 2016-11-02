@@ -19,7 +19,7 @@
     for key, project in config.work
       &.job_{key}
         > .inner
-          background-color: unquote(project.color)
+          //background-color: unquote(project.color)
           position relative
           width inherit
           height inherit
@@ -38,9 +38,9 @@
             background-size cover
             background-position 50% 50%
             background-repeat no-repeat
-            width 200%
-            height 200%
-            margin -50% 0 0 -50%
+            width 150%
+            height 150%
+            margin -25% 0 0 -25%
           > .logo
             background-image url(/images/work/key/logo.png)
             background-size contain
@@ -56,14 +56,14 @@
             background-color rgba(gc(black1), 0.7)
             width 100%
             text-align center
-            padding 20px 0
+            padding 10px 0
             gf(copy1)
             opacity 0
             transform translate(0, 30px)
             transition transform 0.1s linear 0s, opacity 0.1s linear 0s
             > .copy
               transform translate(0, 10px)
-              transition transform 0.1s linear 0.1s, opacity 0.1s linear 0.1s
+              transition transform 0.1s linear 0.05s, opacity 0.1s linear 0.05s
               opacity 0
 
 
