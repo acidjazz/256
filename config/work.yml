@@ -1,17 +1,29 @@
 ---
  definery:
    color: "#3F4C55"
-   name: Astro Studios
    url: http://www.astrostudios.com/
+   title: Definery LLC
  astro:
    color: '#FF002B'
-   name: Astro Studios
    url: http://www.astrostudios.com/
+   title: Astro Studios
  br:
    color: '#221F20'
-   name: Bystander Revolution
    url: http://www.bystanderrevolution.org/
+   title: Bystander Revolution
  daffodil:
    color: '#ffffff'
-   name: Daffodil Digital
    url: http://www.daffodildigital.com/
+   title: Daffodil Digital
+ gilman:
+   color: '#221f20'
+   url: http://gilman.256.tech/
+   title: Gilman Brewing Company
+ sake:
+   color: '#221f20'
+   url: http://www.designsakestudio.com/
+   title: Designsake Studio
+ studio:
+   color: '#4867aa'
+   url: http://www.facebook-studio.com/
+   title: Facebook Studio
