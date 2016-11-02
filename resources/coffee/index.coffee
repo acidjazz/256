@@ -15,10 +15,7 @@ Index =
       _.on '.menu > .option.option_1'
       _.on '.section.section_work'
 
-      $('.section_work > .work > .job').each (i, el) ->
-        new Parallax el,
-          invertX: true
-          invertY: true
+      new Parallax $('.section.section_work')[0]
 
     , 4100
 
@@ -29,6 +26,8 @@ Index =
   option: ->
     _.off '.menu > .option'
     _.on this
+    _.off '.section'
+    _.on ".section.section_#{$(this).data('option')}"
 
   cycle: ->
 

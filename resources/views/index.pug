@@ -5,11 +5,13 @@ block content
     .work
       each job, name in config.work
         .job(class='job_' + name)
-          .inner.layer(data-depth=0.2)
-            .background.layer(data-depth=0.4)
-            .logo.layer(data-depth=0.6)
+          .inner.layer(data-depth=0.05)
+            .background.layer(data-depth=0.1)
+            .logo.layer(data-depth=0.2)
             .title: .copy=job.title
   .section.section_code.off
+    .uc coming soon
+  .section.section_contact.off
     .uc coming soon
 
   script.
