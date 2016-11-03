@@ -61,19 +61,20 @@ gulp.task 'vendor', ->
   .pipe gulp.dest('public/css/')
 
 gulp.task 'coffee', ->
-  gulp.src(dirs.coffee + '/*.coffee')
-    .pipe(gulpif(env == 'dev', sourcemaps.init(loadMaps: true)))
-    .pipe(coffee(bare: true)
-      .on('error', notify.onError((error) ->
-        title: "Coffee error"
-        message: error.message + "\r\n" + error.filename + ':' + error.location.first_line
-        sound: 'Pop'
-      )))
-    .pipe(gulpif(env != 'dev',uglify()))
-    .pipe(concat('bundle.js'))
-    .pipe(gulpif(env == 'dev',sourcemaps.write()))
-    .pipe(gulp.dest('./public/javascript'))
-    .pipe(sync.stream())
+  objectify ->
+    gulp.src(dirs.coffee + '/*.coffee')
+      .pipe(gulpif(env == 'dev', sourcemaps.init(loadMaps: true)))
+      .pipe(coffee(bare: true)
+        .on('error', notify.onError((error) ->
+          title: "Coffee error"
+          message: error.message + "\r\n" + error.filename + ':' + error.location.first_line
+          sound: 'Pop'
+        )))
+      .pipe(gulpif(env != 'dev',uglify()))
+      .pipe(concat('bundle.js'))
+      .pipe(gulpif(env == 'dev',sourcemaps.write()))
+      .pipe(gulp.dest('./public/javascript'))
+      .pipe(sync.stream())
 
 gulp.task 'stylus', ->
   objectify ->

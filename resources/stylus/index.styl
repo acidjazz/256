@@ -1,3 +1,115 @@
+.fade
+  onoff()
+  position fixed
+  fullsize()
+  background-color rgba(gc(black1), 0.9)
+  z-index 10
+
+.modal
+  onoff()
+  position absolute
+  width 800px
+  margin-left -400px
+  left 50%
+  top 50%
+  transform translateY(-50%)
+  z-index 10
+  animation cellInY 0.5s linear 0s both
+  animation-timing-function: cubic-bezier(.87,-.41,.19,1.44)
+  > .inner
+    position relative
+    top 50%
+    transform translateY(-50%)
+    background-color gc(black2)
+    border-radius 20px
+    > .body
+      padding 60px
+      > .links
+        > .link
+          onoff()
+          animation cellOutY 0.2s linear 0.8s both
+          for i in 1..3
+            &:nth-child({i})
+              animation-delay unit((0.1*i) + 0.8, 's')
+          float left
+          width 35px
+          height 35px
+          background-color gc(purple1)
+          padding 15px
+          margin 0 15px 0 0
+          border-radius 50%
+          cursor pointer
+          &:hover > svg > path
+              fill gc(white1)
+          > svg
+            width inherit
+            height inherit
+            > path
+              fill gc(purple3)
+              transition fill 0.1s linear 0s
+      > .copy
+        padding 0 0 20px 0
+        animation cellOutY 0.2s linear 0.5s both
+        for i in 1..3
+          &:nth-child({i})
+            animation-delay unit((0.1*i) + 0.5, 's')
+
+        > p > a
+          color gc(teal1)
+          text-decoration none
+          &:hover
+            color gc(purple2)
+            background-color gc(teal2)
+
+        &.copy_title
+          gf(copy3)
+          color gc(teal1)
+          float left
+          letter-spacing 2px
+        &.copy_tagline
+          color gc(teal2)
+          gf(copy1)
+          float left
+          margin 10px 0 0 10px
+        &.copy_detail
+          clear both
+          color gc(white1)
+          gf(copy1)
+          //padding-right 30px
+
+    > .close
+      animation spinIn 0.5s linear 0.5s both
+      animation-timing-function: cubic-bezier(.87,-.41,.19,1.44)
+      position absolute
+      top 30px
+      right 30px
+      width 35px
+      height 35px
+      cursor pointer
+      background-color gc(purple1)
+      border-radius 50%
+      padding 15px
+      > .blades
+        transform rotate(45deg)
+        transition transform 0.5s ease-in-out 0.2s
+        > .blade
+          transition background-color 0.2s ease-in-out 0.2s
+        height 35px
+        &:hover
+          transform rotate(135deg)
+          transition transform 0.2s ease-in-out 0s
+          > .blade
+            background-color gc(white1)
+            transition background-color 0.2s ease-in-out 0s
+        > .blade
+          height 8px
+          background-color gc(purple3)
+          border-radius 0 4px 0 4px
+          &:nth-child(1)
+            transform translate(0px, 13.5px) rotate(90deg)
+          &:nth-child(2)
+            transform translate(0px, 5.5px) rotate(0deg)
+
 .section
   onoff()
   height calc(100vh - 170px)

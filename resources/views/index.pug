@@ -1,11 +1,31 @@
 extends extends/layout
 
 block content
+  .fade.off
+  .modal.off
+    .inner
+      .close
+        .blades
+          .blade
+          .blade
+
+      .body
+        .copy.copy_title
+        .copy.copy_tagline
+        .copy.copy_detail
+
+        .links
+          a.link.link_url.off(target="_new")
+            include ../vector/link.svg
+          a.link.link_github.off(target="_new")
+            include ../vector/github.svg
+        .clear
+
   .section.section_work.off
     .work
       each job, name in config.work
-        .job(class='job_' + name)
-          .inner.layer(data-depth=0.05)
+        .job(class='job_' + name,data-job=name)
+          .inner.layer(data-depth=0.05,data-job=name)
             .background.layer(data-depth=0.1)
             .logo.layer(data-depth=0.2)
             .title: .copy=job.title

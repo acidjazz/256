@@ -23,6 +23,7 @@ Index =
         new Parallax $('.section.section_work')[0]
 
         Index.handlers()
+        Index.modal.handlers()
 
       , 2100
 
@@ -45,6 +46,7 @@ Index =
   handlers: ->
     $('header > .inner > .logo').click Index.cycle
     $('.menu > .option').click Index.option
+    $('.section.section_work > .work > .job > .inner').click Index.job
 
   option: ->
     _.off '.menu > .option'
@@ -64,4 +66,36 @@ Index =
     setTimeout ->
       _.on '.logo'
     , 610
+
+  modal:
+
+    i: (job) ->
+      _.on '.fade, .modal'
+      gig = config.work[job]
+      $('.body > .copy.copy_title').css 'color', gig.color
+
+      $('.body > .copy.copy_title').html gig.title
+      $('.body > .copy.copy_tagline').html gig.tagline
+      for p in gig.detail
+        console.log p
+        $('.body > .copy.copy_detail').append "<p>#{p}</p>"
+
+      for type, link of gig.links
+        _.on ".body > .links > .link_#{type}"
+        $(".body > .links > .link_#{type}").attr 'href', link
+
+    handlers: ->
+      $('.fade, .modal > .inner > .close').click Index.modal.d
+
+    d: ->
+      _.off '.fade, .modal'
+      _.off ".body > .links > .link"
+
+      $('.body > .copy.copy_title').html ''
+      $('.body > .copy.copy_tagline').html ''
+      $('.body > .copy.copy_detail').html ''
+
+  job: ->
+    Index.modal.i $(this).data 'job'
+
 
