@@ -140,6 +140,12 @@
         margin 0 auto 20px auto
         &:last-child
           margin auto
+        &:hover
+          > .icon > svg > path
+            fill gc(white1)
+            transition fill 0.1s linear 0s
+          > .value
+            color gc(white1)
         display block
         > .icon
           float left
@@ -149,8 +155,6 @@
           background-color gc(purple1)
           border-radius 50%
           margin 0 15px 0 0
-          &:hover > svg > path
-              fill gc(white1)
           > svg
             width inherit
             height inherit
@@ -160,6 +164,7 @@
           float left
           line-height 55px
           color gc(teal2)
+          transition color 0.1s linear 0s
 
 .work
   padding 1vw 
