@@ -4,7 +4,7 @@ definery:
   title: DEFINERY
   tagline: a digital product design and innovation company
   detail:
-    - I had the honor of working with the Definery team on our first version of <a href="http://definery.io" target="_new">definery.io</a>. For this project we wanted to go for the most innovative and recent (while still compatible) technology.
+    - For our first version of <a href="http://definery.io" target="_new">definery.io</a>. For this project we wanted to go for the most innovative and recent (while still compatible) technology.
     - We packed in lots of lively features like clipping, masking, and using blend modes (mix-blend-mode to be precise) for compositing graphic elements, which even worked well with video.  We also hit our target on mobile by dynamically alternating meta tags used to customize the user experience on android devices.  
   links:
     url: http://definery.io/

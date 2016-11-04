@@ -7,7 +7,7 @@
 
 .modal
   onoff()
-  position absolute
+  position fixed
   width 800px
   margin-left -400px
   left 50%
@@ -21,7 +21,7 @@
     top 50%
     transform translateY(-50%)
     background-color gc(black2)
-    border-radius 20px
+    //border-radius 20px
     > .body
       padding 60px
       > .links
@@ -127,6 +127,39 @@
 
     animation cellInY 0.5s linear 0s both
     animation-timing-function: cubic-bezier(.87,-.41,.19,1.44)
+  &.section_contact
+    > .copy
+      gf(h2)
+      margin 40px
+      padding 40px
+      background-color gc(black2)
+      animation cellInY 0.5s linear 0s both
+      animation-timing-function: cubic-bezier(.87,-.41,.19,1.44)
+      > .set
+        width 420px
+        margin 0 auto 20px auto
+        &:last-child
+          margin auto
+        display block
+        > .icon
+          float left
+          width 35px
+          height 35px
+          padding 15px
+          background-color gc(purple1)
+          border-radius 50%
+          margin 0 15px 0 0
+          &:hover > svg > path
+              fill gc(white1)
+          > svg
+            width inherit
+            height inherit
+            > path
+              fill gc(purple3)
+        > .value
+          float left
+          line-height 55px
+          color gc(teal2)
 
 .work
   padding 1vw 
@@ -200,12 +233,4 @@
               transform translate(0, 10px)
               transition transform 0.1s linear 0.05s, opacity 0.1s linear 0.05s
               opacity 0
-
-
-@media all and (min-width: 1px) and (max-width: 1000px)
-  .work
-    text-align center
-    > .job
-      width 45vw
-      height 45vw
-      margin 2vw 
+@import 'mobile-1k.styl'

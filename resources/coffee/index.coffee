@@ -18,7 +18,7 @@ Index =
 
       setTimeout ->
         _.on '.menu > .option.option_1'
-        _.on '.section.section_work'
+        _.on '.section.section_contact'
 
         new Parallax $('.section.section_work')[0]
 
