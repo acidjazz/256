@@ -5,7 +5,7 @@ holidays:
   tagline: 'same holiday, different home'
   detail:
     - Real fun project for Airbnb to promote spending the holidays away from home.
-    - This was a mobile-only site where you upload a photo of you and your family celebrating, then choose a filter you like and then share it.
+    - This was a mobile-only site where you upload a photo of you and your family celebrating, choose a filter you like and then share it.
     - Full stack project even involving operatiions, automated scaling, and load testing.
   links:
     url: https://holidays.withairbnb.com/
