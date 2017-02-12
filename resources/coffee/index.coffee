@@ -77,7 +77,6 @@ Index =
       $('.body > .copy.copy_title').html gig.title
       $('.body > .copy.copy_tagline').html gig.tagline
       for p in gig.detail
-        console.log p
         $('.body > .copy.copy_detail').append "<p>#{p}</p>"
 
       for type, link of gig.links
