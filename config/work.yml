@@ -1,4 +1,23 @@
 ---
+holidays:
+  color: '#7b0051'
+  title: 'home for the holidays'
+  tagline: 'same holiday, different home'
+  detail:
+    - Real fun project for Airbnb to promote spending the holidays away from home.
+    - This was a mobile-only site where you upload a photo of you and your family celebrating, then choose a filter you like and then share it.
+    - Full stack project even involving operatiions, automated scaling, and load testing.
+  links:
+    url: https://holidays.withairbnb.com/
+lookingglass:
+  color: '#C29E6E'
+  title: looking glass VR
+  tagline: windows to the past are open at last
+  detail:
+    - It's been a blast contributing to this awesome VR app; a 3D photo viewer of around 200 photos from all over the world about a century old, finally to be seen as they were intended. 
+  links:
+    url: https://lookingglassvr.com/
+    github: https://github.com/lookingglassvr/lookingglass
 definery:
   color: '#55C7C0'
   title: DEFINERY
