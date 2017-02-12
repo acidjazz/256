@@ -20,7 +20,7 @@ Index =
         _.on '.menu > .option.option_1'
         _.on '.section.section_work'
 
-        new Parallax $('.section.section_work')[0]
+        new Parallax $('.section.section_work')[0], limitX: 20, limitY: 50
 
         Index.handlers()
         Index.modal.handlers()
