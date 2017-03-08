@@ -41,6 +41,8 @@
     "gulp-uglify": "^2.0.0",
     "gulp-util": "^3.0.7",
     "jquery": "^3.1.1",
+    "jquery.easing": "^1.4.1",
+    "jquery.scrollto": "^2.1.2",
     "objectus": "^1.1.1",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"

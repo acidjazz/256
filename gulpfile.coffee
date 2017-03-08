@@ -44,6 +44,8 @@ gulp.task 'vendor', ->
 
   gulp.src([
     'node_modules/jquery/dist/jquery.js',
+    'node_modules/jquery.scrollto/jquery.scrollTo.js',
+    'node_modules/jquery.easing/jquery.easing.js',
     'public/javascript/lib/parallax.js',
     'node_modules/dbar/dist/dbar.js',
   ])

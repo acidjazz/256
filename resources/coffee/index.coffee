@@ -27,6 +27,12 @@ Index =
 
       , 2100
 
+      setTimeout ->
+        $('html, body').scrollTo ".section_work",
+          duration: 2500
+          easing: 'easeInOutBack'
+      , 2400
+
   loadImages: (complete) ->
 
     dbar.i()
