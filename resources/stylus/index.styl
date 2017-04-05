@@ -180,7 +180,7 @@
     cursor pointer
     for i in 1..20
       &:nth-child({i})
-        animation-delay unit((0.1*i), 's')
+        animation-delay unit((0.05*i), 's')
     for key, project in config.work
       &.job_{key}
         &:nth-child(odd) > .inner:hover > .title
