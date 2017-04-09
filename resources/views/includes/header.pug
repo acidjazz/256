@@ -1,5 +1,17 @@
 header
   .inner
+    .logo.off
+      .inner
+        .circle
+        .copy 
+          if error
+            .letter 4
+            .letter 0
+            .letter 4
+          else
+            .letter 2
+            .letter 5
+            .letter 6
 
     .menu
       .option.loading.off.option_1(data-option='work')
@@ -18,16 +30,4 @@ header
         figure.face.top 
         figure.face.back resume
 
-    .logo.off
-      .inner
-        .circle
-        .copy 
-          if error
-            .letter 4
-            .letter 0
-            .letter 4
-          else
-            .letter 2
-            .letter 5
-            .letter 6
     .clear
