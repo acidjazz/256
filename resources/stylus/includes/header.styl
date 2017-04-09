@@ -10,19 +10,19 @@
 .dbar > .inner > .gradient
   background: linear-gradient(90deg, gc(purple3), rgba(gc(white1),0.2))
 
-dsize = 350
+dsize = 250
 msize = 150
 header
   border-bottom 10px solid gc(teal2)
   background-color gc(teal1)
-  height 160px
+  height 100px
   position relative
   z-index 5
   transition height 1s linear
   transition-timing-function: cubic-bezier(.87,-.41,.19,1.44)
   overflow hidden
   &.settled
-    height 150px
+    height 100px
     > .inner > .logo
       left auto
       right 200px
@@ -31,16 +31,16 @@ header
     > .menu
       width 600px
       height 50px
-      margin 80px 0 0 0
+      margin 40px 0 0 0
       z-index 10
       position absolute
       > .option
         float left
         position relative
         width 150px
-        height 50px
+        height 40px
         transform-style preserve-3d
-        transform-origin 100% 115%
+        transform-origin 100% 100%
         user-select none
         -webkit-tap-highlight-color gc(black1)
         tap-highlight-color gc(black1)
@@ -71,8 +71,8 @@ header
           position absolute
           width inherit
           height inherit
-          gf(copy2)
-          line-height 52px
+          gf(copy1)
+          line-height 40px
           background-color gc(teal1)
           color gc(teal2)
           backface-visibility hidden
@@ -80,17 +80,17 @@ header
           transition color 0.1s linear, background-color 0.1s linear 0.05s
           user-select none
         > .face.front
-          transform rotateX(0deg) translate3d(0, 0, 25px)
+          transform rotateX(0deg) translate3d(0, 0, 20px)
           cursor pointer
           background-color gc(black1)
         > .face.bottom
-          transform rotateX(-90deg) translate3d(0, 0, 25px)
+          transform rotateX(-90deg) translate3d(0, 0, 20px)
           background-color gc(teal1)
         > .face.top
-          transform rotateX(90deg) translate3d(0, 0, 25px)
+          transform rotateX(90deg) translate3d(0, 0, 20px)
           background-color gc(black1)
         > .face.back
-          transform rotateX(-180deg) translate3d(0, 0, 25px)
+          transform rotateX(-180deg) translate3d(0, 0, 20px)
           background-color gc(black1)
           color gc(teal1)
           background-color gc(teal2)
@@ -100,7 +100,7 @@ header
     > .logo
       user-select none
       position absolute
-      top 80px
+      top 50px
       right 200px
       margin-top - unit(dsize/2, px)
       margin-right - unit(dsize/2, px)
@@ -212,15 +212,15 @@ header
     > .inner
       > .menu
         //margin -33px 0 0 -40px
-        margin 42px 0 0 -30px
+        margin 44px 0 0 -30px
         height 40px
         > .option
-          width 100px
+          width 80px
           height 40px
           //float none
-          transform-origin 100% 100% 
+          transform-origin 100% 90% 
           > .face
-            gf(copy1)
+            gf(copy1s)
             height 40px
             line-height 40px
             //background-color gc(teal1)
@@ -235,8 +235,8 @@ header
 
 
       > .logo
-        right 180px
-        top 150px
+        right 120px
+        top 110px
         width unit(msize, px)
         height unit(msize, px)
         > .inner
@@ -249,29 +249,3 @@ header
             font-size unit(msize/2.5, px)
             top unit(msize/3.5, px)
             right - unit(msize/100, px)
-
- /*
-
-@media all and (min-width: 1px) and (max-width: 1000px)
-  header.settled
-    height 150px
-    > .inner
-      > .menu
-        margin -33px 0 0 -40px
-        > .option
-          float none
-          > .face.top,
-          > .face.front
-            background-color gc(teal1)
-
-      > .logo
-        right 185px
-        top 160px
-        width unit(msize, px)
-        height unit(msize, px)
-        > .inner
-          > .copy
-            font-size unit(msize/2.5, px)
-            top unit(msize/3.5, px)
-            right - unit(msize/100, px)
-*/

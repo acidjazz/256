@@ -1,5 +1,9 @@
 ---
 
+copy1s:
+  font-family: Roboto
+  font-size: 16px
+
 copy1:
   font-family: Roboto
   font-size: 20px

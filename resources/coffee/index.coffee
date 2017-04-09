@@ -25,7 +25,9 @@ Index =
 
         Index.handlers()
         Index.modal.handlers()
-        Index.loadImages()
+        setTimeout ->
+          Index.loadImages()
+        , 400
 
       , 1200
 
