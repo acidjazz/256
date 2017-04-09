@@ -242,7 +242,7 @@
       var layer = this.layers[i];
       if (this.transform3DSupport) this.accelerate(layer);
       layer.style.position = i ? 'absolute' : 'relative';
-      layer.style.display = 'block';
+      //layer.style.display = 'block';
       layer.style.left = 0;
       layer.style.top = 0;
 
