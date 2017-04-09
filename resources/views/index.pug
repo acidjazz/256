@@ -26,12 +26,15 @@ block content
       each job, name in config.work
         .job(class='job_' + name,data-job=name)
           .inner.layer(data-depth=0.05,data-job=name)
-            .background.layer(data-depth=0.1)
-            .logo.layer(data-depth=0.2)
+            .background.off.layer(data-depth=0.1)
+            .thumbnail.on.thumbnail_background
+            .logo.off.layer(data-depth=0.2)
+            .thumbnail.on.thumbnail_logo
             .title: .copy=job.title
+            .loading.on: .full
   .section.section_code.off
     .uc coming soon
-  .section.section_contact.off
+  .section.section_resume.off
     .copy
       a.set(href="mailto:kevin@256.io")
         .icon

@@ -1,13 +1,14 @@
 .dbar
   z-index 10
-  background-color gc(teal2)
+  background-color gc(purple3)
+  height 10px
+  display none !important
 
 .dbar > .inner > .full
   background-color gc(purple1)
 
 .dbar > .inner > .gradient
-  background: linear-gradient(90deg, gc(teal2), rgba(gc(purple3),1))
-
+  background: linear-gradient(90deg, gc(purple3), rgba(gc(white1),0.2))
 
 dsize = 350
 msize = 200
@@ -145,6 +146,7 @@ header
 
 @keyframes logoCircleIn
   from
+    opacity 0
     margin unit(dsize/2, px)
     width 0px
     height 0px

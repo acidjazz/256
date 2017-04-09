@@ -4,7 +4,8 @@ Index =
 
     _.on 'header > .inner > .logo'
 
-    @loadImages ->
+    @loadThumbnails ->
+
 
       $('.menu > .option').removeClass 'loading'
       $('.menu > .option').addClass 'loaded'
@@ -24,30 +25,50 @@ Index =
 
         Index.handlers()
         Index.modal.handlers()
+        Index.loadImages()
 
       , 2100
 
+      ###
       setTimeout ->
         $('html, body').scrollTo ".section_work",
           duration: 2500
           easing: 'easeInOutBack'
       , 2400
-
-  loadImages: (complete) ->
-
-    dbar.i()
+      ###
+  loadThumbnails: (complete) ->
 
     images = []
 
     for dir of config.work
-      images.push "images/work/#{dir}/logo.png"
-      images.push "images/work/#{dir}/background.jpg"
+      images.push "images/work/#{dir}/thumbnails/logo.png"
+      images.push "images/work/#{dir}/thumbnails/background.jpg"
 
     Preload images, (progress) ->
       dbar.perc progress
     , (done) ->
       dbar.d()
       complete()
+
+
+  loadImages: (complete) ->
+
+    $.each config.work, (name) ->
+
+      loadImage "images/work/#{name}/logo.png",  (ratio) ->
+        $(".job_#{name} > .inner > .loading > .full").css('width', "#{ratio/2}%")
+      .then (imageSource) ->
+        $(".job_#{name} > .inner > .logo").css('background-image', "url(#{imageSource})")
+        _.off ".job_#{name} > .inner > .thumbnail_logo"
+        _.on ".job_#{name} > .inner > .logo"
+
+        loadImage "images/work/#{name}/background.jpg",  (ratio) ->
+          $(".job_#{name} > .inner > .loading > .full").css('width', "#{(ratio/2) + 50}%")
+        .then (imageSource) ->
+          $(".job_#{name} > .inner > .background").css('background-image', "url(#{imageSource})")
+          _.off ".job_#{name} > .inner > .thumbnail_background"
+          _.on ".job_#{name} > .inner > .background"
+          _.off ".job_#{name} > .inner > .loading"
 
   handlers: ->
     $('header > .inner > .logo').click Index.cycle
