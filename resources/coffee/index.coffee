@@ -2,24 +2,24 @@ Index =
 
   i: ->
 
-    _.on 'header > .inner > .logo'
-
     @loadThumbnails ->
 
+      _.on 'header > .inner > .logo'
 
       $('.menu > .option').removeClass 'loading'
       $('.menu > .option').addClass 'loaded'
 
-      $('header').addClass 'settled'
-
       setTimeout ->
         $('.menu > .option').removeClass 'loading'
         $('.menu > .option').removeClass 'loaded'
-      , 2000
+      , 1000
 
       setTimeout ->
         _.on '.menu > .option.option_1'
         _.on '.section.section_work'
+      , 1100
+
+      setTimeout ->
 
         new Parallax $('.section.section_work')[0], limitX: 20, limitY: 50
 
@@ -27,7 +27,7 @@ Index =
         Index.modal.handlers()
         Index.loadImages()
 
-      , 2100
+      , 1200
 
       ###
       setTimeout ->

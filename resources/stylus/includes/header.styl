@@ -15,14 +15,14 @@ msize = 200
 header
   border-bottom 10px solid gc(teal2)
   background-color gc(teal1)
-  height 100vh
+  height 160px
   position relative
   z-index 5
   transition height 1s linear
   transition-timing-function: cubic-bezier(.87,-.41,.19,1.44)
   overflow hidden
   &.settled
-    height 160px
+    height 150px
     > .inner > .logo
       left auto
       right 200px
@@ -56,14 +56,14 @@ header
         &.loading
           transform rotateX(90deg)
         &.loaded
-          animation menuEnter 0.5s ease-in-out 1.0s alternate both
+          animation menuEnter 0.5s ease-in-out 0.0s alternate both
           animation-timing-function cubic-bezier(.87,-.41,.19,1.44)
         &.loaded:nth-child(1)
-          animation-delay 1.1s
+          animation-delay 0.1s
         &.loaded:nth-child(2)
-          animation-delay 1.3s
+          animation-delay 0.3s
         &.loaded:nth-child(3)
-          animation-delay 1.5s
+          animation-delay 0.5s
 
         > .face
           position absolute
@@ -98,8 +98,8 @@ header
     > .logo
       user-select none
       position absolute
-      top 50%
-      right 50%
+      top 80px
+      right 200px
       margin-top - unit(dsize/2, px)
       margin-right - unit(dsize/2, px)
       width unit(dsize, px)
@@ -110,7 +110,7 @@ header
         height inherit
         border-radius 50%
         background-color gc(teal2)
-        animation logoCircleIn 0.5s ease-in 0.5s alternate both
+        animation logoCircleIn 0.5s ease-in 0s alternate both
         animation-timing-function: cubic-bezier(.87,-.41,.19,1.44)
         position relative
         cursor pointer
@@ -131,11 +131,11 @@ header
           right - unit(dsize/100, px)
           > .letter
             float left
-            animation logoTextIn 0.2s ease-in 1.0s alternate both
+            animation logoTextIn 0.2s ease-in 0.5s alternate both
             &:nth-child(2)
-              animation-delay 1.025s
+              animation-delay 0.525s
             &:nth-child(3)
-              animation-delay 1.05s
+              animation-delay 0.55s
     > .info
       margin 10px 20px 0 0
       float right
@@ -146,7 +146,6 @@ header
 
 @keyframes logoCircleIn
   from
-    opacity 0
     margin unit(dsize/2, px)
     width 0px
     height 0px
@@ -154,6 +153,18 @@ header
     margin 0
     width inherit
     height inherit
+
+@keyframes mlogoCircleIn
+  from
+    margin unit(msize/2, px)
+    width 0px
+    height 0px
+  to
+    margin 0
+    width inherit
+    height inherit
+
+
 
 @keyframes logoCircleOut
   from
@@ -164,6 +175,17 @@ header
     margin unit(dsize/2, px)
     width 0px
     height 0px
+
+@keyframes mlogoCircleOut
+  from
+    margin 0
+    width inherit
+    height inherit
+  to
+    margin unit(msize/2, px)
+    width 0px
+    height 0px
+
 
 
 @keyframes menuEnter
@@ -182,7 +204,7 @@ header
 
 
 @media all and (min-width: 1px) and (max-width: 1000px)
-  header.settled
+  header, header.settled
     height 150px
     > .inner
       > .menu
@@ -199,6 +221,11 @@ header
         width unit(msize, px)
         height unit(msize, px)
         > .inner
+          animation mlogoCircleIn 0.5s ease-in 0s alternate both
+          animation-timing-function: cubic-bezier(.87,-.41,.19,1.44)
+          &.offing
+            animation mlogoCircleOut 0.5s ease-in 0s alternate both
+            animation-timing-function: cubic-bezier(.87,-.41,.19,1.44)
           > .copy
             font-size unit(msize/2.5, px)
             top unit(msize/3.5, px)
