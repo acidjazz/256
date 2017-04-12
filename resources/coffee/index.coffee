@@ -1,6 +1,11 @@
 Index =
+  sections: ['work','code','resume']
+  section: 'work'
 
   i: ->
+
+    hash = window.location.hash.replace('#', '')
+    @section = hash if @sections.indexOf(hash) isnt -1
 
     @loadThumbnails ->
 
@@ -15,8 +20,8 @@ Index =
       , 1000
 
       setTimeout ->
-        _.on '.menu > .option.option_1'
-        _.on '.section.section_work'
+        _.on ".menu > .option.option_#{Index.section}"
+        _.on ".section.section_#{Index.section}"
       , 1100
 
       setTimeout ->
@@ -74,14 +79,16 @@ Index =
 
   handlers: ->
     $('header > .inner > .logo').click Index.cycle
-    $('.menu > .option').click Index.option
+    $('.menu > .option, .text_option').click Index.option
     $('.section.section_work > .work > .job > .inner').click Index.job
 
   option: ->
+    option = $(this).data('option')
     _.off '.menu > .option'
-    _.on this
+    _.on ".option_#{option}"
     _.off '.section'
-    _.on ".section.section_#{$(this).data('option')}"
+    _.on ".section.section_#{option}"
+    window.location.hash = option
 
   cycle: ->
 

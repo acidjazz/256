@@ -1,4 +1,4 @@
-extends extends/layout
+extends layout/core
 
 block content
   .fade.off
@@ -35,23 +35,7 @@ block content
   .section.section_code.off
     .uc coming soon
   .section.section_resume.off
-    .copy
-      a.set(href="mailto:kevin@256.io")
-        .icon
-          include ../vector/email.svg
-        .value kevin@256.io
-        .clear
-      a.set(href="https://github.com/acidjazz",target="_new")
-        .icon
-          include ../vector/github.svg
-        .value github.com/acidjazz
-        .clear
-      a.set(href="tel:+19492908989",target="_new")
-        .icon
-          include ../vector/phone.svg
-        .value +1 949 290 8989
-        .clear
-
+    include resume
 
   script.
     Index.i()

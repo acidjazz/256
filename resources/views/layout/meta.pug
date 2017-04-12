@@ -1,0 +1,38 @@
+meta(http-equiv="X-UA-Compatible",content="IE=Edge,chrome=1")
+meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+meta(name='viewport', content='user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height')
+
+//- google
+meta(name='description',content=config.meta.description)
+meta(name='keywords',content=config.meta.keywords)
+
+script(type='application/ld+json').
+  {
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "url": "#{config.meta.url}",
+    "logo": "#{config.meta.url}#{config.meta.share}",
+    "telephone": "#{config.meta.phone}",
+    "sameAs": [
+      "#{config.meta.social.instagram}",
+      "#{config.meta.social.twitter}",
+      "#{config.meta.social.facebook}"
+    ]
+  }
+
+meta(property='og:url',content=config.meta.url)
+meta(property='og:title',content=config.meta.title)
+meta(property='og:image',content=config.meta.url + config.meta.share)
+meta(property='og:description',content=config.meta.description)
+
+meta(property='og:type',content='website')
+
+//- twitter
+meta(name='twitter:card',content='summary_large_image')
+
+meta(name='twitter:title',content=config.meta.title)
+meta(name='twitter:description',content=config.meta.description)
+meta(name='twitter:image',content=config.meta.url + config.meta.share)
+meta(name='twitter:image:width','1200')
+meta(name='twitter:image:height','630')
+
