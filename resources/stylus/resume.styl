@@ -1,14 +1,49 @@
 .section_resume
+  > .contact
+    float right
+    margin 10px 40px 0px 0
+    padding 0
+    > a
+      float right
+      animation cellInX 0.2s ease-in-out 0s both
+      &:nth-child(2)
+        animation-delay 0.1s
+      &:nth-child(3)
+        animation-delay 0.2s
+      > .icon
+        float left
+        width 20px
+        height 20px
+        background-color gc(black2)
+        padding 15px
+        border-radius 50%
+        margin 0 0 0 10px
+        > svg > path
+          fill gc(purple3)
+          transition fill 0.1s linear 0s
+      &:hover
+        > .icon > svg > path
+          fill gc(white1)
+        > .value
+          color gc(white1)
+      > .value
+        float left
+        gf(copy1s)
+        margin 15px 0 0 5px
+        color gc(teal2)
+        transition color 0.1s linear 0s
 
   > .name
     gf(copy2)
     color gc(teal2)
-    margin 20px 0 0 40px
+    margin 20px 0 0px 40px
+    animation cellOutX 0.2s ease-in-out 0s both
+    float left
   > .content
-    margin 20px 40px
+    margin 10px 40px
     padding 20px
     background-color gc(black2)
-    animation fadeIn 0.5s linear 0s both
+    animation fadeIn 0.5s linear 0.2s both
     animation-timing-function: cubic-bezier(.87,-.41,.19,1.44)
     a
       color gc(white2)
@@ -34,44 +69,4 @@
         > time
           gf(copy1s)
           padding 0 10px 0 0
-
-  > .contact
-    display none
-    gf(h2)
-    margin 40px
-    padding 40px
-    background-color gc(black2)
-    animation cellInY 0.5s linear 0s both
-    animation-timing-function: cubic-bezier(.87,-.41,.19,1.44)
-    > .set
-      width 420px
-      margin 0 auto 20px auto
-      &:last-child
-        margin auto
-      &:hover
-        > .icon > svg > path
-          fill gc(white1)
-          transition fill 0.1s linear 0s
-        > .value
-          color gc(white1)
-      display block
-      > .icon
-        float left
-        width 35px
-        height 35px
-        padding 15px
-        background-color gc(purple1)
-        border-radius 50%
-        margin 0 15px 0 0
-        > svg
-          width inherit
-          height inherit
-          > path
-            fill gc(purple3)
-      > .value
-        float left
-        line-height 55px
-        color gc(teal2)
-        transition color 0.1s linear 0s
-
 
